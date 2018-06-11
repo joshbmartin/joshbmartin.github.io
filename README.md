@@ -1,99 +1,44 @@
-# Louie
-[![Gem Version](https://badge.fury.io/rb/louie.svg)](https://badge.fury.io/rb/louie)
+Solar Theme for Jekyll
+======================
 
-A jekyll portfolio generator (that looks awesome). Louie is free, lightweight, and customizable as a blog, archive, or portfolio.
+A stylish theme for [Jekyll](http://jekyllrb.com/) blogs, based on the [Solarized](http://ethanschoonover.com/solarized) color palette.
 
-![Home](screenshot.png)
-![Home with hover](screenshot2.png)
-![Post](screenshot3.png)
+![Screenshot](http://i.imgur.com/UnnRhkt.png)
 
-## Installation
-Add this line to your Jekyll site's Gemfile:
 
-```ruby
-gem "louie"
-```
+Features
+-------
 
-And add this line to your Jekyll site's `_config.yml`:
+* **Two color schemes** — One for Solarized Dark and one for Solarized Light. Just swap the reference to the `colors-dark.css` file with `colors-light.css` if you don't like light-on-dark.
+* **Linkblog support** — Solar will turn your post title into an external link if you add `external-url: http://example.org` to a post's YAML front matter.
+* **Responsive Design** — Solarized adapts to fit any screen size.
 
-```yaml
-theme: louie
-```
 
-And then execute:
+Installation
+--------------
 
-    $ bundle
+There are two ways to use Solar. You can either clone-and-go, copying the repository and tweaking the contents to taste, or you can cherry-pick the files you want and integrate them into an existing Jekyll instance. 
 
-Or install it yourself as:
+If you're starting a new blog, you want to clone-and-go. Just `git clone https://github.com/redwallhp/solar-theme-jekyll.git`, make any changes you want to the template, pages or `_config.yml` and start blogging with Jekyll. Easy.
 
-    $ gem install louie
+If you're wanting to replace the theme of an existing Jekyll blog, either option should work. If you want to replace files individually, the files and directories you want to make sure to copy are:
 
-## Usage
-### Basic configurations
-Here are a few general info fields to populate your new site right away.
+1. `_layouts`
+2. `archives`
+3. `assets`
+4. `feed.xml`
+5. `index.xml`
 
-```yaml
-title: HTML <title>, which is overridden by post/page title if exists
-baseurl: ""
-favicon: "/path/to"
-g_analytics: UA-12345678-1
+You'll also want to compare Solar's `_config.yml` with your own, making any appropriate changes.
 
-header: name of your site here
-desc: >
-  description of your site, can be a quick bio if it's a portfolio. It supports HTML so add your links, imgs, whatever!
-```
 
-### Social media links
-To add links to your social sites (linkedin, twitter, etc) below the bio, create a file named `social.yml` in your `_data` folder (which you may not have created yet). Inside it, follow the following format:
+Demo
+-------
 
-```yaml
-- title: Twitter
-  url: http://twitter.com/lllychen
-- title: Github
-  url: http://github.com/lllychen/louie
-# and so on...
-```
+You can see a demo of Solar [right here on GitHub Pages.](http://mattvh.github.io/solar-theme-jekyll/)
 
-### Column names
-The names for each column is defaulted to `Title`, `Date`, and `Category`, respectively. However, this can be changed according to use cases. For instance, an archive of classic literature may need to adjust accordingly:
 
-```yaml
-post_title: Story
-post_date: Year
-post_cat: Genre
-```
+License
+---------
 
-### Date format
-The default format for dates is `%b %-d, %Y`, which outputs `Jan 1, 2017`. However, you can customize it according to [this](http://jekyll.tips/jekyll-casts/date-formatting/#date) in `_config.yml` such as follows:
-
-```yaml
-date_format: "%m/%d/%Y"
-```
-
-### Post variables
-You can include the following variables in the front matter for posts:
-
-```yaml
-title:  Berry Perfume
-category: Narrative
-img: [ OPTIONAL: url or path in directory ]
-```
-
-The `img` variable is used to produce a randomly placed image associated with this post when you hover over it. If you omit it, there simply won't be a picture and all is still well.
-
-If you prefer not to have the category in your post permalink, follow the guidelines [here](https://jekyllrb.com/docs/permalinks/) to remove it among other configurations.
-
-### Post pagination
-To include previous and next links at the bottom of a post page, leave the following setting to `true`. Otherwise, change to `false`.
-
-```yaml
-prev-next: true
-```
-
-## License
-The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
-## Credit
-Stories created and collected by [Story Bytes](http://www.storybytes.com/view-length/0256-words/index-0256.html).
-
-Images collected by [Unsplash](https://unsplash.com/)
+GPLv2 or higher
