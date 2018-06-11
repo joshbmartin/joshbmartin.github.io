@@ -1,134 +1,99 @@
-# Lanyon
+# Louie
+[![Gem Version](https://badge.fury.io/rb/louie.svg)](https://badge.fury.io/rb/louie)
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+A jekyll portfolio generator (that looks awesome). Louie is free, lightweight, and customizable as a blog, archive, or portfolio.
 
-![Lanyon](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
-![Lanyon with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
+![Home](screenshot.png)
+![Home with hover](screenshot2.png)
+![Post](screenshot3.png)
 
+## Installation
+Add this line to your Jekyll site's Gemfile:
 
-## Contents
+```ruby
+gem "louie"
+```
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
-- [License](#license)
+And add this line to your Jekyll site's `_config.yml`:
 
+```yaml
+theme: louie
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install louie
 
 ## Usage
+### Basic configurations
+Here are a few general info fields to populate your new site right away.
 
-Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+```yaml
+title: HTML <title>, which is overridden by post/page title if exists
+baseurl: ""
+favicon: "/path/to"
+g_analytics: UA-12345678-1
 
-
-## Options
-
-Lanyon includes some customizable options, typically applied via classes on the `<body>` element.
-
-
-### Sidebar menu
-
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
-
-```
----
-layout: page
-title: About
----
+header: name of your site here
+desc: >
+  description of your site, can be a quick bio if it's a portfolio. It supports HTML so add your links, imgs, whatever!
 ```
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+### Social media links
+To add links to your social sites (linkedin, twitter, etc) below the bio, create a file named `social.yml` in your `_data` folder (which you may not have created yet). Inside it, follow the following format:
 
-
-### Themes
-
-Lanyon ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
-
-![Lanyon with red theme](https://f.cloud.github.com/assets/98681/1825270/be065110-71b0-11e3-9ed8-9b8de753a4af.png)
-![Lanyon with red theme and open sidebar](https://f.cloud.github.com/assets/98681/1825269/be05ec20-71b0-11e3-91ea-a9138ef07186.png)
-
-There are eight themes available at this time.
-
-![Available theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add any one of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
+```yaml
+- title: Twitter
+  url: http://twitter.com/lllychen
+- title: Github
+  url: http://github.com/lllychen/louie
+# and so on...
 ```
 
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/lanyon/blob/master/public/css/lanyon.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
+### Column names
+The names for each column is defaulted to `Title`, `Date`, and `Category`, respectively. However, this can be changed according to use cases. For instance, an archive of classic literature may need to adjust accordingly:
 
-
-### Reverse layout
-
-![Lanyon with reverse layout](https://f.cloud.github.com/assets/98681/1825265/be03f2e4-71b0-11e3-89f1-360705524495.png)
-![Lanyon with reverse layout and open sidebar](https://f.cloud.github.com/assets/98681/1825268/be056174-71b0-11e3-88c8-5055bca4307f.png)
-
-Reverse the page orientation with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
+```yaml
+post_title: Story
+post_date: Year
+post_cat: Genre
 ```
 
+### Date format
+The default format for dates is `%b %-d, %Y`, which outputs `Jan 1, 2017`. However, you can customize it according to [this](http://jekyll.tips/jekyll-casts/date-formatting/#date) in `_config.yml` such as follows:
 
-### Sidebar overlay instead of push
-
-Make the sidebar overlap the viewport content with a single class:
-
-```html
-<body class="sidebar-overlay">
-  ...
-</body>
+```yaml
+date_format: "%m/%d/%Y"
 ```
 
-This will keep the content stationary and slide in the sidebar over the side content. It also adds a `box-shadow` based outline to the toggle for contrast against backgrounds, as well as a `box-shadow` on the sidebar for depth.
+### Post variables
+You can include the following variables in the front matter for posts:
 
-It's also available for a reversed layout when you add both classes:
-
-```html
-<body class="layout-reverse sidebar-overlay">
-  ...
-</body>
+```yaml
+title:  Berry Perfume
+category: Narrative
+img: [ OPTIONAL: url or path in directory ]
 ```
 
-### Sidebar open on page load
+The `img` variable is used to produce a randomly placed image associated with this post when you hover over it. If you omit it, there simply won't be a picture and all is still well.
 
-Show an open sidebar on page load by modifying the `<input>` tag within the `sidebar.html` layout to add the `checked` boolean attribute:
+If you prefer not to have the category in your post permalink, follow the guidelines [here](https://jekyllrb.com/docs/permalinks/) to remove it among other configurations.
 
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
+### Post pagination
+To include previous and next links at the bottom of a post page, leave the following setting to `true`. Otherwise, change to `false`.
+
+```yaml
+prev-next: true
 ```
-
-Using Liquid you can also conditionally show the sidebar open on a per-page basis. For example, here's how you could have it open on the homepage only:
-
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
-```
-
-## Development
-
-Lanyon has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
 
 ## License
+The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-Open sourced under the [MIT license](LICENSE.md).
+## Credit
+Stories created and collected by [Story Bytes](http://www.storybytes.com/view-length/0256-words/index-0256.html).
 
-<3
+Images collected by [Unsplash](https://unsplash.com/)
