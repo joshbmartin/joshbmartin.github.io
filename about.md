@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-**Hi i'm kuoa!** and here is the place where i document and share my projects.
+**Hi I'm Josh!** this is the space I use to write projects, life, gaming, who knows!
 
-* [Github](http://github.com/kuoa)
-* Mail: kuoacat[at]gmail[dot]com
+* [Github](http://github.com/joshbmartin)
+* Mail: dev.joshm[at]gmail[dot]com
