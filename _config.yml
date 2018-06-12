@@ -1,9 +1,31 @@
-name: Solar Theme
-url: http://example.org
-description: A stylish blog using the Solarized color palette
+# Site settings
+title: Julia #website title
+description: > # this means to ignore newlines until "baseurl:"
+  Julia
+url: #https://kuoa.github.io # the base hostname & protocol for your site
+baseurl: # the sub-path of your site, e.g. /blog/
 
-permalink: /:year/:month/:day/:title/
-paginate: 10
+disqus_shortname: kuoa # leave empty if you don't want comments
+google_analytics: false #if set to "true" modify the google_analytycs.html, set to false otherwise
 
-gems: [jekyll-paginate]
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+# Links settings
+links:
+  - name:         Home
+    url:          /
+  - name:         About
+    url:          /about
+    external:     false
+  - name:         Archive
+    url:          /archive
+    external:     false
+    external:     false
+  - name:         GitHub
+    url:          http://github.com/kuoa
+    external:     true
+
+# Build settings
+markdown: kramdown
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "fenced_code_blocks"]

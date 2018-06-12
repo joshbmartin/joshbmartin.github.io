@@ -1,44 +1,53 @@
-Solar Theme for Jekyll
-======================
+# Julia [![Demo](https://img.shields.io/badge/julia-demo-green.svg)](https://kuoa.github.io/julia/)
 
-A stylish theme for [Jekyll](http://jekyllrb.com/) blogs, based on the [Solarized](http://ethanschoonover.com/solarized) color palette.
+A minimalistic jekyll theme
 
-![Screenshot](http://i.imgur.com/UnnRhkt.png)
+---------------------------
+Home page
 
+![about-page](https://raw.githubusercontent.com/kuoa/julia/master/assets/home.png)
+---------------------------
 
-Features
--------
+Part one of a long post
+![post-1](https://raw.githubusercontent.com/kuoa/julia/master/assets/post_1.png)
+---------------------------
 
-* **Two color schemes** — One for Solarized Dark and one for Solarized Light. Just swap the reference to the `colors-dark.css` file with `colors-light.css` if you don't like light-on-dark.
-* **Linkblog support** — Solar will turn your post title into an external link if you add `external-url: http://example.org` to a post's YAML front matter.
-* **Responsive Design** — Solarized adapts to fit any screen size.
+Part two of a long post
+![post-2](https://raw.githubusercontent.com/kuoa/julia/master/assets/post_2.png)
+---------------------------
 
+Posts will be listed by category in the `Archive` page alongside with their tags
+![archive-page](https://raw.githubusercontent.com/kuoa/julia/master/assets/archive.png)
 
-Installation
---------------
+---------------------------
 
-There are two ways to use Solar. You can either clone-and-go, copying the repository and tweaking the contents to taste, or you can cherry-pick the files you want and integrate them into an existing Jekyll instance. 
-
-If you're starting a new blog, you want to clone-and-go. Just `git clone https://github.com/redwallhp/solar-theme-jekyll.git`, make any changes you want to the template, pages or `_config.yml` and start blogging with Jekyll. Easy.
-
-If you're wanting to replace the theme of an existing Jekyll blog, either option should work. If you want to replace files individually, the files and directories you want to make sure to copy are:
-
-1. `_layouts`
-2. `archives`
-3. `assets`
-4. `feed.xml`
-5. `index.xml`
-
-You'll also want to compare Solar's `_config.yml` with your own, making any appropriate changes.
+How to use it
+=========
 
 
-Demo
--------
+### Install from github
 
-You can see a demo of Solar [right here on GitHub Pages.](http://mattvh.github.io/solar-theme-jekyll/)
+1. [Fork this repository](https://github.com/kuoa/julia/fork)
 
+2. Clone the repository to your computer and run it
 
-License
----------
+    ``` sh
+    $ git clone https://github.com/kuoa/julia.git
+    $ bundler install
+    $ jekyll serve
+    ```
 
-GPLv2 or higher
+---------------------------
+
+### Configurations
+Edit the `_config.yml` file and make the theme yours.
+ * Change the base color in */css/main.sccs*  ```$brand-color:      new-color;```
+ * To enable comments modify the ```disqus_shortname```
+ * To enable google-analytics set ```google-analytics``` to true and paste your tracking code in ```/_inludes/google_analytics.html```
+ * To add links to the navbar edit the ```links``` section
+
+---------------------------
+### Author  [![Twitter](https://img.shields.io/badge/kuoa-<3-66BAB7.svg)](https://github.com/kuoa)
+
+---------------------------
+### License  [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/kuoa/julia/blob/master/LICENSE)
