@@ -1,26 +1,3 @@
-# Julia [![Demo](https://img.shields.io/badge/julia-demo-green.svg)](https://kuoa.github.io/julia/)
-
-A minimalistic jekyll theme
-
----------------------------
-Home page
-
-![about-page](https://raw.githubusercontent.com/kuoa/julia/master/assets/home.png)
----------------------------
-
-Part one of a long post
-![post-1](https://raw.githubusercontent.com/kuoa/julia/master/assets/post_1.png)
----------------------------
-
-Part two of a long post
-![post-2](https://raw.githubusercontent.com/kuoa/julia/master/assets/post_2.png)
----------------------------
-
-Posts will be listed by category in the `Archive` page alongside with their tags
-![archive-page](https://raw.githubusercontent.com/kuoa/julia/master/assets/archive.png)
-
----------------------------
-
 How to use it
 =========
 
