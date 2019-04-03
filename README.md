@@ -22,9 +22,3 @@ Edit the `_config.yml` file and make the theme yours.
  * To enable comments modify the ```disqus_shortname```
  * To enable google-analytics set ```google-analytics``` to true and paste your tracking code in ```/_inludes/google_analytics.html```
  * To add links to the navbar edit the ```links``` section
-
----------------------------
-### Author  [![Twitter](https://img.shields.io/badge/kuoa-<3-66BAB7.svg)](https://github.com/kuoa)
-
----------------------------
-### License  [![License](https://img.shields.io/npm/l/express.svg)](https://github.com/kuoa/julia/blob/master/LICENSE)
