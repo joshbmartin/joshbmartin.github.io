@@ -8,7 +8,7 @@ tags: storage networking data
 finished: true
 ---
 
-A client reached out recently requesting to upgrade their storage solution for their office. They have roughly 12 users and they're expanding to a second office in another state with a handfull of users. Currently an internal HDD on a Windows 7 machine is being utilized as a network drive for the main office (Office A). The remote office (Office B) uses LogMeIn to a machine in the main office in order to access the drive. They aren't interested in setting up a full domain yet and AWS solutions are too pricey per month for the amount of data they're accessing.
+A client reached out recently requesting to upgrade their storage solution for their office. They have roughly 12 users and they're expanding to a second office in another state with a handfull of users. Currently an internal HDD on a Windows 7 machine is being utilized as a network drive for the main office (Office A). The remote office (Office B) uses LogMeIn to access a machine in Office A in order to access the drive. They aren't interested in setting up a full domain yet and AWS solutions are too pricey per month for the amount of data they're accessing.
 
 # In comes Synology
 
