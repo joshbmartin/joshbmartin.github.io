@@ -21,4 +21,4 @@ This provides the team with a NAS and 1 level of redundancy at each location. Fa
 
 ## Setup
 
-Synology makes the setup fairly easy but there are a handful of controls that can make things better or worse.
+Synology makes the setup fairly easy but there are a handful of controls that can make things better or worse. Thankfully they make it easy to sync up multiple Synology drives by installing Cloud Station Server to the main NAS and Cloud Station Client to the secondary NAS. 
