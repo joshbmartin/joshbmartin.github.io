@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Synology NAS Deployment</title>
+  <meta name="description" content="A client reached out recently requesting to upgrade their storage solution for their office. They have roughly 12 users and they’re expanding to a second off...">
+
+  <link rel="stylesheet" href="joshbmartin.github.io/css/main.css">
+  <link rel="canonical" href="joshbmartin.github.io/storage/2019/08/09/Synology-NAS-Deployment.html">
+  <link rel="alternate" type="application/rss+xml" title="Josh Martin" href="joshbmartin.github.io/feed.xml" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+</head>
+
+
+  <body>
+
+    <div class="site-header">
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <i class="fa fa-navicon fa-lg"></i>
+      </a>
+
+      <div class="trigger">
+        
+          <a class="page-link" target="_top"
+             href="/">Home</a>
+        
+          <a class="page-link" target="_top"
+             href="/about">About</a>
+        
+          <a class="page-link" target="_top"
+             href="/archive">Archive</a>
+        
+          <a class="page-link" target="_blank"
+             href="http://github.com/joshbmartin">GitHub</a>
+        
+      </div>
+    </nav>
+
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+     <h1 class="post-title">Synology NAS Deployment</h1>
+     <p class="post-meta">
+         <i class="fa fa-calendar-o"></i> Aug 9, 2019
+          • <i class="fa fa-user"></i> josh
+         </p>
+  </header>
+
+    <div class="post-paging">
+  
+    <div class="left">
+      <a href="/networking/2018/06/19/UVC-G3-Pro-DOA.html">
+        <i class="fa fa-angle-left fa-2x"></i>
+      </a>
+    </div>
+  
+  
+    <div class="right">
+      <a href="/cloud/2020/02/28/AWS-Exam-Countdown.html">
+        <i class="fa fa-angle-right fa-2x"></i>
+      </a>
+    </div>
+  
+</div>
+
+
+  <article class="post-content">
+    <p>A client reached out recently requesting to upgrade their storage solution for their office. They have roughly 12 users and they’re expanding to a second office in another state with a handfull of users. Currently an internal HDD on a Windows 7 machine is being utilized as a network drive for the main office (Office A). The remote office (Office B) uses LogMeIn to access a machine in Office A in order to access the drive. They aren’t interested in setting up a full domain yet and AWS solutions are too pricey per month for the amount of data they’re accessing.</p>
+
+<h1 id="in-comes-synology">In comes Synology</h1>
+
+<p>Recommended Gear:</p>
+
+<ul>
+  <li>2 x Synology DS218+ NAS Bays</li>
+  <li>4 x 6TB WD Red drives</li>
+</ul>
+
+<p>This provides the team with a NAS and 1 level of redundancy at each location. Farewell LogMeIn!</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Synology makes the setup fairly easy but there are a handful of controls that can make things better or worse. Thankfully they make it easy to sync up multiple Synology drives by installing Cloud Station Server to the main NAS and Cloud Station Client to the secondary NAS.</p>
+
+  </article>
+
+    
+
+    
+
+  <div class="post-up" align="center">
+  	<a href="#">
+  	<i class="fa fa-angle-up fa-2x"></i>
+  	</a>
+  </div>
+
+</div>
+      </div>
+    </div>
+
+  <div class="footer center">
+
+ Check me out on 
+  <a href="https://github.com/joshbmartin" target="_blank">Github!</a>
+  <img src='/assets/logo.png'>
+
+</div>
+
+
+  </body>
+</html>

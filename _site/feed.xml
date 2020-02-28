@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josh Martin</title>
+    <description>Josh Martin Blog
+</description>
+    <link>joshbmartin.github.io/</link>
+    <atom:link href="joshbmartin.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 28 Feb 2020 09:43:39 -0500</pubDate>
+    <lastBuildDate>Fri, 28 Feb 2020 09:43:39 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>AWS Exam Countdown</title>
+        <description>&lt;h1 id=&quot;march-22-2020-saa-c01-will-retire&quot;&gt;March 22, 2020 SAA-C01 will retire&lt;/h1&gt;
+
+&lt;p&gt;It’s been roughly 10 years since I’ve gotten certified or even taken a test for that matter. That was back when I got my Net+ still in high school!&lt;/p&gt;
+
+&lt;p&gt;I’ve been wanting to go for this exam for about a year now. I’ve just recently finished this &lt;a href=&quot;https://www.udemy.com/course/aws-certified-solutions-architect-associate/&quot;&gt;Udemy Course&lt;/a&gt; by Ryan Kroonenburg. However, now that I’m done I feel like my skills are still lacking. Might as well make a list of things I need to work on.&lt;/p&gt;
+
+&lt;p&gt;Things to do:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Work through all labs again&lt;/li&gt;
+  &lt;li&gt;VPC work especially (setting up subnets, route tables, NACLs, etc)&lt;/li&gt;
+  &lt;li&gt;Whitepaper refresh&lt;/li&gt;
+  &lt;li&gt;End section Exam questions reviewed.&lt;/li&gt;
+  &lt;li&gt;Work through Practice Tests from Jon Bonso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have roughyl 3 weeks until the exam will refresh. Once I work through the above items I’m hoping to have at least 2 chances to schedule my exam. Time to get to work!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Feb 2020 00:00:00 -0500</pubDate>
+        <link>joshbmartin.github.io/cloud/2020/02/28/AWS-Exam-Countdown.html</link>
+        <guid isPermaLink="true">joshbmartin.github.io/cloud/2020/02/28/AWS-Exam-Countdown.html</guid>
+        
+        <category>cloud</category>
+        
+        
+        <category>cloud</category>
+        
+      </item>
+    
+      <item>
+        <title>Synology NAS Deployment</title>
+        <description>&lt;p&gt;A client reached out recently requesting to upgrade their storage solution for their office. They have roughly 12 users and they’re expanding to a second office in another state with a handfull of users. Currently an internal HDD on a Windows 7 machine is being utilized as a network drive for the main office (Office A). The remote office (Office B) uses LogMeIn to access a machine in Office A in order to access the drive. They aren’t interested in setting up a full domain yet and AWS solutions are too pricey per month for the amount of data they’re accessing.&lt;/p&gt;
+
+&lt;h1 id=&quot;in-comes-synology&quot;&gt;In comes Synology&lt;/h1&gt;
+
+&lt;p&gt;Recommended Gear:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2 x Synology DS218+ NAS Bays&lt;/li&gt;
+  &lt;li&gt;4 x 6TB WD Red drives&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This provides the team with a NAS and 1 level of redundancy at each location. Farewell LogMeIn!&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;Synology makes the setup fairly easy but there are a handful of controls that can make things better or worse. Thankfully they make it easy to sync up multiple Synology drives by installing Cloud Station Server to the main NAS and Cloud Station Client to the secondary NAS.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Aug 2019 00:00:00 -0400</pubDate>
+        <link>joshbmartin.github.io/storage/2019/08/09/Synology-NAS-Deployment.html</link>
+        <guid isPermaLink="true">joshbmartin.github.io/storage/2019/08/09/Synology-NAS-Deployment.html</guid>
+        
+        <category>storage</category>
+        
+        <category>networking</category>
+        
+        <category>data</category>
+        
+        
+        <category>storage</category>
+        
+      </item>
+    
+      <item>
+        <title>RIP G3 Pro</title>
+        <description>&lt;p&gt;I just received my brand new UniFi UVC G3 Pro, plugged it in, opened up the NVR and found no cameras were available for adoption. Bummer.&lt;/p&gt;
+
+&lt;h1 id=&quot;unifi-uvc-g3-pro-cant-connect-cant-adopt&quot;&gt;UniFi UVC G3 Pro can’t connect, can’t adopt&lt;/h1&gt;
+
+&lt;p&gt;Current network setup:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UniFi Switch 16 (150W)&lt;/li&gt;
+  &lt;li&gt;UniFi Security Gateway&lt;/li&gt;
+  &lt;li&gt;UniFi Cloud Key&lt;/li&gt;
+  &lt;li&gt;UniFi AC Pro&lt;/li&gt;
+  &lt;li&gt;UniFi AC Lite&lt;/li&gt;
+  &lt;li&gt;Windows 10 NVR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You could say I’m no stranger to UniFi gear. The only reason I didn’t go with the UniFi branded NVR or even an Ubuntu box of my own was for ease of use and initial setup for testing. My current Windows 10 machine is more than capable of handling one camera to perform my testing. Unfortunately it never made it far enough to test.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-begin-our-testing&quot;&gt;Lets begin our testing&lt;/h2&gt;
+
+&lt;p&gt;It’s roughly 5pm. I’ve just gotten home from work. I snap a few photos of the G3 Pro still wrapped tight in its beautiful packaging:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/unifi3.jpg&quot; alt=&quot;g3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/unifi2.jpg&quot; alt=&quot;g3 side&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/unifi1.jpg&quot; alt=&quot;g3 back&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I take my new 50 foot outdoor Cat5e cable hook it into my cable tester. All green lights! So far so good.
+I hook the cable into a known working port in the house and connect the other end to my G3 Pro. IR lights come on since the lighting isn’t the best in the basement. So far so good! I launch my NVR from my W10 box, but I don’t see any cameras to adopt. Weird… I disconnect/reconnect the cam and refresh my browser still no cams showing up to be adopted.&lt;/p&gt;
+
+&lt;p&gt;Thinking, I wonder if the switch port is configured to provide POE? Hop into the UniFi controller check the switch port config, sure enough its set correctly. I check the phsyical switch, it’s showing POE+ going to the camera.&lt;/p&gt;
+
+&lt;p&gt;I swap the cables just in case, no dice. Eventually I started digging around UniFi forums for similar problems. I find a few different articles talking about ports that you need to allow on your firewall to allow UniFi video to work correctly. Specifically 7442 &amp;amp; 7443. I unblock these. Still no luck. I disable my firewall on my W10 box hosting the NVR software, still no luck.&lt;/p&gt;
+
+&lt;p&gt;In the UniFi controller I can see the camera would sometimes get an IP and sometimes it wouldn’t, rather than letting the camera reach out to DHCP I set a static IP, still no luck. Browsing to the IP of the camera directly in my browser instead of trying to adopt through the NVR also didn’t work.&lt;/p&gt;
+
+&lt;p&gt;Resetting the camera by pressing the phsyical button on the back of the device for 10 seconds, this has got to be the winner right!? Nope. Still no dice.&lt;/p&gt;
+
+&lt;p&gt;Getting to the last of my efforts I decide to use a known working POE port in my house thats currently powering my UniFi AP AC Pro. Hook up the camera using the same cables powering that AP, still no dice. On all the above testing methods. Eventually having exhausted all options I knew about I reached out to UniFi chat support hoping they would have the key.&lt;/p&gt;
+
+&lt;h2 id=&quot;unifi-chat-support&quot;&gt;UniFi Chat Support&lt;/h2&gt;
+
+&lt;p&gt;Sean was super helpful in troubleshooting the camera while I was off site. Eventually it came time where I needed to be on site to change out the cables and perform some other hands on testing. A few hours later I made it on site, I reached back out to chat support thinking I’d have to go through the whole process with someone else. Turns out this new agent saw I was working with Sean and got me directly connected to his chat. This was a seamless and great experience. Not having to repeat the entire discussion again. Emailing is not my cup of tea and I’d rather not talk to people on the phone so 24/7 chat support was a perfect.&lt;/p&gt;
+
+&lt;p&gt;We go through basically all of the above methods and then we do one thing I hadn’t tried. We use a POE Injector in between my Desktop and the camera. We set a static IP on the desktop hooked the lan of the desktop into the lan of the injector, and the POE going into the Camera. Unfortunately we still weren’t able to get connected to the cam.&lt;/p&gt;
+
+&lt;h2 id=&quot;rma&quot;&gt;RMA&lt;/h2&gt;
+
+&lt;p&gt;Sean advised I fill out an RMA form and they would ship me out a new cam, I assumed I would have to pay shipping to send my broken camera back. But since my cam was DOA they have already approved my claim the same day and said I should expect my new camera within a week! All I need to do is use the label with the new camera &amp;amp; ship the broken camera back in the same box! Sounds easy enough!&lt;/p&gt;
+
+&lt;p&gt;All in all, even though the camera was DOA UniFi customer support has been fantastic. Couldn’t recommend them enough. I’ll post an update once I get the new cam and we’ll see where we go from there!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Jun 2018 00:00:00 -0400</pubDate>
+        <link>joshbmartin.github.io/networking/2018/06/19/UVC-G3-Pro-DOA.html</link>
+        <guid isPermaLink="true">joshbmartin.github.io/networking/2018/06/19/UVC-G3-Pro-DOA.html</guid>
+        
+        <category>networking</category>
+        
+        <category>video</category>
+        
+        <category>camera</category>
+        
+        <category>ip</category>
+        
+        <category>unifi</category>
+        
+        
+        <category>networking</category>
+        
+      </item>
+    
+  </channel>
+</rss>
