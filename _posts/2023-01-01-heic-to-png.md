@@ -1,0 +1,26 @@
+---
+title: TITLE
+date: YYYY-MM-DD HH:MM:SS +/-TTTT
+categories: [code]
+tags: [ruby]     # TAG names should always be lowercase
+---
+
+A minor annoyance is the .heic file type from iOS photos. Occassionally I'll take timestamp photos of items I want to sell on reddit.
+Most people generally upload their images to imgur and then share the link to the photos on Reddit. However, there's an additional step
+of converting those heic images to png/jpg so that they will be accepted by imgur. I've used a few of the free convert image websites but decided
+to finally just build something I can run locally. 
+
+With that, I discovered MiniMagick, a ruby wrapper for ImageMagick. 8 lines of code and voila
+
+```
+require 'mini_magick'
+
+Dir.glob('*.heic').each do |heic_file|
+  output_png_file = File.basename(heic_file, '.heic') + '.png'
+
+  MiniMagick::Tool::Convert.new do |convert|
+    convert << heic_file
+    convert << output_png_file
+  end
+end
+```
