@@ -1,7 +1,7 @@
 ---
-title: TITLE
+title: heic to png
 date: 2023-01-01 04:13:01 -0500
-categories: [code]
+categories: [code samples]
 tags: [ruby]     # TAG names should always be lowercase
 ---
 
@@ -12,7 +12,7 @@ to finally just build something I can run locally.
 
 With that, I discovered MiniMagick, a ruby wrapper for ImageMagick. 8 lines of code and voila
 
-```
+```ruby
 require 'mini_magick'
 
 Dir.glob('*.heic').each do |heic_file|
