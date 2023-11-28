@@ -1,6 +1,6 @@
 ---
 title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: 2023-01-01 04:13:01 -0500
 categories: [code]
 tags: [ruby]     # TAG names should always be lowercase
 ---
