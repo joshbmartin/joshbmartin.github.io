@@ -14,12 +14,12 @@ timezone: America/Louisville
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Exploration # the main title
+title: Josh # the main title
 
-tagline: Various experiments in tech # it will display as the sub-title
+tagline: My attempt at writing
 
 description: >- # used by seo meta and the atom feed
-  A technical blog of exploration and ideas
+  Josh Martin Blog
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -34,11 +34,10 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Josh
   email: dev.joshm@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    - https://x.com/thejbmartino # change to your twitter homepage
     - https://github.com/jbmartino # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
