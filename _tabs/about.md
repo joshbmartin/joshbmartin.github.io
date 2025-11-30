@@ -4,8 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# About Me
-
 ## Personal
 
 I have two young boys, a beautiful wife, and two small dogs. I love warm beach trips and cozy winter cabins, and I’m actually writing this in front of a fire in a snow-covered cabin right now (11/29/25). I enjoy F1, football, UFC, video games, writing code, reading, rock climbing, traveling, and brewing lots of espresso.
