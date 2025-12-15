@@ -65,7 +65,7 @@ def log(message):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     print(f"[{timestamp}] {message}", flush=True)
 
-def update_badge_status(badge_id):
+def update_badge_status(scanned_id):
     """Update the received status for a given badge ID"""
     try:
         # Load the workbook
@@ -75,23 +75,23 @@ def update_badge_status(badge_id):
         # Find the badge ID and update the status
         found = False
         for row_idx, row in enumerate(ws.iter_rows(min_row=2, values_only=False), start=2):
-            # Column A is the Card Number
-            card_number = row[0].value
+            # Column A is the Badge ID
+            badge_id = row[0].value
 
             # Try to match the badge ID (handle both int and string)
             try:
-                if str(card_number).strip() == str(badge_id).strip():
+                if str(badge_id).strip() == str(scanned_id).strip():
                     first_name = row[1].value
                     last_name = row[2].value
                     current_status = row[3].value
 
                     if current_status and current_status.lower() == 'yes':
-                        log(f"⚠️  Badge {badge_id} ({first_name} {last_name}) already marked as received")
+                        log(f"⚠️  Badge {scanned_id} ({first_name} {last_name}) already marked as received")
                     else:
                         # Update the Received column (column D, index 3)
                         row[3].value = 'Yes'
                         wb.save(EXCEL_FILE)
-                        log(f"✅ SUCCESS: {first_name} {last_name} - Badge {badge_id} marked as RECEIVED")
+                        log(f"✅ SUCCESS: {first_name} {last_name} - Badge {scanned_id} marked as RECEIVED")
 
                     found = True
                     break
@@ -99,14 +99,14 @@ def update_badge_status(badge_id):
                 continue
 
         if not found:
-            log(f"❌ ERROR: Badge {badge_id} NOT FOUND in the database")
+            log(f"❌ ERROR: Badge {scanned_id} NOT FOUND in the database")
 
         wb.close()
 
     except FileNotFoundError:
         log(f"❌ ERROR: Excel file '{EXCEL_FILE}' not found!")
     except Exception as e:
-        log(f"❌ ERROR updating badge {badge_id}: {e}")
+        log(f"❌ ERROR updating badge {scanned_id}: {e}")
 
 def main():
     """Main loop - reads badge IDs from stdin and updates Excel file"""
@@ -158,8 +158,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
-Shout out to Claude Code for the emojis and some help proofreading :D
 
 The good thing about running through stdin is we can have any numeric value in our sheet, and then type it in without having a physical badge to validate the functionality of the code which is what I did!
 
@@ -221,5 +219,7 @@ echo "Launching Badge Scanner..."
 echo ""
 make run
 ```
+
+![BadgeScanDemo](badgescandemo.png)
 
 Note: No badge ids or names were ever exposed to me or shared externally in any way. This is a completely isolated solution.
