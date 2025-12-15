@@ -8,7 +8,7 @@ img_path: /assets/img/
 
 My wifes team (HR) passes out Christmas Gifts every year to all of their employees. What a great gesture! However, it's not so great for my wife and her coworkers as they have to manually track employees names on a sheet of paper as they walk up to receive their gift.
 
-A few problems with this:
+### A few problems with the current process
 
 1. There are thousands of employees and it's difficult to always remember everyones name on the spot.
 2. Handwriting names is...tedious.
@@ -18,14 +18,14 @@ We got to talking about the upcoming event for this year and I had mentioned tha
 
 The badge only contians a numeric value and doesn't actually contain the persons name. However, SiPass does have the option to export a list of Badge Id + Employees Name to csv.
 
-There were a few requirements that came from our conversation on this script:
+### Requirements of our script
 
 1. Run continuously
 2. Easy to run
 3. Good feedback on who scanned their badge
 4. Defense on accidental keystrokes
 
-Some technical decisions:
+### Technical decisions
 
 1. Read stdin line by line for badge scans
 2. Utilized openpyxl for reading excel files
@@ -38,6 +38,7 @@ Some technical decisions:
 Now all we need is a badge scanner and some Python code!
 
 Help Desk came through with the Wave ID Plus Scanner!
+
 ![Wave Id Plus](waveidscanner.jpeg)
 
 Roughly 100 lines of code, and a half hour later:
@@ -153,6 +154,8 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+Shout out to Claude Code for the emojis and some help proofreading :D 
 
 The good thing about running through stdin is we can have any numeric value in our sheet, and then type it in without having a physical badge to validate the functionality of the code which is what I did!
 
