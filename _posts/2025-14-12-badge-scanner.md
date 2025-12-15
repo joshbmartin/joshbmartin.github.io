@@ -38,7 +38,7 @@ Some technical decisions:
 Now all we need is a badge scanner and some Python code!
 
 Help Desk came through with the Wave ID Plus Scanner!
-[Wave Id Plus](waveidscanner.jpeg)
+![Wave Id Plus](waveidscanner.jpeg)
 
 Roughly 100 lines of code, and a half hour later:
 
