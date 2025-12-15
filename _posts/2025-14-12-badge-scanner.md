@@ -16,7 +16,7 @@ My wifes team (HR) passes out Christmas Gifts every year to all of their employe
 
 We got to talking about the upcoming event for this year and I had mentioned that it would be fairly painless to have someone scan their badge and then automatically update a list that they have picked up and received their gift.
 
-The badge only contians a numeric value and doesn't actually contain the persons name. However, SiPass does have the option to export a list of Badge Id + Employees Name to csv.
+The badge only contians a numeric value and doesn't actually contain the persons name. However, SiPass does have the option to export a list of Badge Id + Employees Name to csv. Bingo!
 
 ### Requirements of our script
 
