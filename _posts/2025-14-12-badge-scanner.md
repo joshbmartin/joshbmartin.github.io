@@ -33,7 +33,7 @@ The badge only contians a numeric value and doesn't actually contain the persons
 4. Linear scan to find a match, small dataset, and small delay in between scans
 5. Error handling, continues running despite hitting issues with an invalid Badge Id
 6. Duplicate Scan handling
-7. File path and column positions are hardcoded for simplicity, another option is utilizing an .env file
+7. Configuration via `.env` file to avoid hardcoding the Excel filename
 
 Now all we need is a badge scanner and some Python code!
 
@@ -50,11 +50,15 @@ Badge Scanner Script for Gift Pickup
 Monitors badge scans from terminal and updates the Excel file.
 """
 
+import os
 import sys
 import openpyxl
 from datetime import datetime
+from dotenv import load_dotenv
 
-EXCEL_FILE = '2025-gift-pickup.xlsx'
+load_dotenv()
+
+EXCEL_FILE = os.getenv('EXCEL_FILE', '2025-gift-pickup.xlsx')
 
 def log(message):
     """Print timestamped log message"""
@@ -155,11 +159,55 @@ if __name__ == "__main__":
     main()
 ```
 
-Shout out to Claude Code for the emojis and some help proofreading :D 
+Shout out to Claude Code for the emojis and some help proofreading :D
 
 The good thing about running through stdin is we can have any numeric value in our sheet, and then type it in without having a physical badge to validate the functionality of the code which is what I did!
 
-Once the code was finished I was eager to do a quick demo for my wife! As soon as I opened the terminal to run the script my wife put her hand on her head and said "Oh no". Hilariously I had not considered that firing up the terminal and executing my script was just a few too many steps. I decided to create a small shell script to kickoff the python code and creat a shortcut to the bash script on her desktop! Just a double click and she was off and ready to scan!
+### Project Setup
+
+To keep things self-contained, I used a `.env` file to store configuration, a `requirements.txt` for dependencies, and a `Makefile` to tie it all together.
+
+**.env** - Configuration without hardcoding values in the script:
+
+```text
+EXCEL_FILE=2025-gift-pickup.xlsx
+```
+
+**requirements.txt** - Python dependencies:
+
+```text
+openpyxl>=3.1.0
+python-dotenv>=1.0.0
+```
+
+**Makefile** - One command to rule them all:
+
+```makefile
+.PHONY: setup run clean
+
+VENV := .venv
+PYTHON := $(VENV)/bin/python
+PIP := $(VENV)/bin/pip
+
+# Create virtual environment and install dependencies
+setup: $(VENV)/bin/activate
+
+$(VENV)/bin/activate: requirements.txt
+	python3 -m venv $(VENV)
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
+	touch $(VENV)/bin/activate
+
+# Run the badge scanner
+run: setup
+	$(PYTHON) badge_scanner.py
+
+# Clean up virtual environment
+clean:
+	rm -rf $(VENV)
+```
+
+Once the code was finished I was eager to do a quick demo for my wife! As soon as I opened the terminal to run the script my wife put her hand on her head and said "Oh no". Hilariously I had not considered that firing up the terminal and executing my script was just a few too many steps. The Makefile helps here - just `make run` handles creating the virtual environment, installing dependencies, and launching the scanner. I created a small shell script pointing to the Makefile and added a shortcut on her desktop! Just a double click and she was off and ready to scan!
 
 ```bash
 #!/bin/bash
@@ -171,7 +219,7 @@ cd "$SCRIPT_DIR"
 
 echo "Launching Badge Scanner..."
 echo ""
-python3 badge_scanner.py
+make run
 ```
 
 Note: No badge ids or names were ever exposed to me or shared externally in any way. This is a completely isolated solution.
