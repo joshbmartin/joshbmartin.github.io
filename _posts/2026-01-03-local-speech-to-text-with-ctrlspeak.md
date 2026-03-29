@@ -4,13 +4,14 @@ date: 2026-03-01 09:00:00 -0500
 categories: [utilities]
 tags: [python, macos, speech-to-text]
 img_path: /assets/img/
+published: false
 ---
 
-I type a lot. Whether it's writing code, responding to messages, or drafting documentation, my hands are on the keyboard for most of the day. I've always been curious about voice dictation as a way to get thoughts out faster, but every solution I looked at came with tradeoffs I wasn't willing to accept.
+I type a lot. Whether it's writing code, responding to messages, or drafting docs, my hands are on the keyboard for most of the day. I've always been curious about voice dictation as a way to get thoughts out faster, but every solution I looked at came with tradeoffs.
 
 ### The problem with cloud-based dictation
 
-The most popular voice-to-text tools right now — Wispr Flow, WhisperFlow, and others — all share a common architecture: your voice goes up to a server, gets transcribed, and comes back down. That means:
+An option like Wispr Flow has a nice UI but, ultimately only offers so much for free. And you sacrafice everything you say going back through someone elses infra.
 
 1. **Privacy** — Your raw audio is being sent to someone else's servers. Wispr Flow ($144/year) sends recordings to OpenAI and Meta for processing. Some tools have even been caught capturing screenshots of your active window alongside the audio.
 2. **Cost** — These are subscription services wrapping freely available models. You're paying $10-15/month for something your laptop can do locally.
@@ -52,7 +53,7 @@ ctrlspeak also supports multiple models you can swap at runtime (press `m`):
 
 ctrlspeak is available via Homebrew (`brew tap patelnav/ctrlspeak && brew install ctrlspeak`), but since I'm running a customized fork, I wanted a setup that runs directly from source and is fully automated through my dotfiles.
 
-I maintain a [dotfiles repo](https://github.com/joshbmartin/dotfiles) with an `install.sh` that handles everything from Homebrew packages to editor configs. The ctrlspeak setup has three parts: a launcher script, a Python venv, and the install script to tie them together.
+I maintain a [dotfiles repo](https://github.com/jbmartino/dotfiles) with an `install.sh` that handles everything from Homebrew packages to editor configs. The ctrlspeak setup has three parts: a launcher script, a Python venv, and the install script to tie them together.
 
 **bin/ctrlspeak** — A launcher script that lives in my dotfiles and gets symlinked onto `$PATH`:
 
@@ -89,6 +90,8 @@ if [ ! -d "$CTRLSPEAK_VENV" ]; then
   python3 -m venv "$CTRLSPEAK_VENV"
   "$CTRLSPEAK_VENV/bin/pip" install --upgrade pip
   "$CTRLSPEAK_VENV/bin/pip" install -r "$CTRLSPEAK_SRC/requirements.txt"
+  "$CTRLSPEAK_VENV/bin/pip" install -r "$CTRLSPEAK_SRC/requirements-mlx.txt"
+  "$CTRLSPEAK_VENV/bin/pip" install huggingface_hub packaging
   echo "ctrlspeak venv created at $CTRLSPEAK_VENV"
 else
   echo "ctrlspeak venv already exists, skipping..."
