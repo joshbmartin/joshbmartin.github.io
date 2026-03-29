@@ -45,4 +45,6 @@ Full source is on [GitHub](https://github.com/jbmartino/studio-display-renamer).
 
 Grab the dmg to install like any normal macOS app from [Releases](https://github.com/jbmartino/studio-display-renamer/releases).
 
-Enjoy!
+If you found this utility helpful, support me here:
+
+[![Support me on Ko-fi](support_me_on_kofi_red.png)](https://ko-fi.com/jbmartino)
