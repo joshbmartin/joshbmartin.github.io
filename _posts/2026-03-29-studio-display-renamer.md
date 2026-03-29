@@ -24,7 +24,7 @@ Each Apple Studio Display has a unique hardware serial embedded in its CoreAudio
 
 For built-in devices like MacBook Pro speakers/mic and virtual devices like Microsoft Teams Audio, pairing is done by matching the device name after stripping suffixes like "Speakers" and "Microphone."
 
-## From dropdown menu to popover
+## Old Design
 
 The first version used two separate views: a native macOS dropdown menu for switching devices, and a standalone settings window for renaming and testing them.
 
