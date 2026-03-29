@@ -1,6 +1,6 @@
 ---
 title: Apple Studio Display Renamer
-date: 2025-03-29 10:15:01 -0500
+date: 2026-03-29 10:15:01 -0500
 categories: [utilities]
 tags: [Swift, Claude]
 img_path: /assets/img/
