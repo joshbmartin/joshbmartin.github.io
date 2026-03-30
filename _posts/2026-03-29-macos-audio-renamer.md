@@ -1,5 +1,5 @@
 ---
-title: Apple Studio Display Renamer
+title: macOS Audio Renamer
 date: 2026-03-29 10:15:01 -0500
 categories: [utilities]
 tags: [Swift, Claude]
@@ -12,11 +12,11 @@ In the macOS audio dropdown they're both just "Studio Display Speakers" and "Stu
 
 I built a small menu bar utility that lets me rename them, save preferred input/output pairs, and test audio.
 
-## Studio Display Renamer
+## macOS Audio Renamer
 
-[github.com/jbmartino/studio-display-renamer](https://github.com/jbmartino/studio-display-renamer)
+[github.com/jbmartino/macos-audio-renamer](https://github.com/jbmartino/macos-audio-renamer)
 
-![Studio Display Renamer](newmenu.png)
+![macOS Audio Renamer](macos-audio-renamer-popover.png)
 
 ## How it works
 
@@ -41,9 +41,9 @@ I also redid the test sound. The original temporarily switched the system defaul
 
 ## Source
 
-Full source is on [GitHub](https://github.com/jbmartino/studio-display-renamer).
+Full source is on [GitHub](https://github.com/jbmartino/macos-audio-renamer).
 
-Grab the dmg to install like any normal macOS app from [Releases](https://github.com/jbmartino/studio-display-renamer/releases).
+Grab the dmg to install like any normal macOS app from [Releases](https://github.com/jbmartino/macos-audio-renamer/releases).
 
 If you found this utility helpful, support me here:
 
